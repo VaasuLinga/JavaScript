@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <style>
+            body{
+               text-align: center;
+            }
+        </style>
+    </head>
+
+    <body>
+        <span onclick="heart()" style='font-size:50px;' id="heart_sym">&#x2661;</span><br>
+        <span id="heart_value">0 Likes</span>
+
+        <script>
+            var heart_count=0;
+            var like_text="Like"
+            function heart()
+            {
+                heart_count=heart_count+1;
+                if((heart_count%2)==0)
+                {
+                    heart_count=0;
+                    like_text="Likes";
+                }
+                document.getElementById("heart_value").innerHTML=heart_count +" "+like_text;
+            }
+            </script>
+    </body>
+</html>
