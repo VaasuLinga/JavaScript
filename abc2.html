@@ -1,0 +1,16 @@
+<html>
+    <body>
+        <form action="abc1.html" onsubmit="citystore()">
+           Enter City: <input type="text" id="city">
+           <button>Submit</button>
+        </form>
+
+        <script>
+            function citystore()
+            {
+                var city= document.getElementById("city").value;
+                localStorage.setItem("city",city);
+            }
+        </script>
+    </body>
+</html>
