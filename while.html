@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <style>
+            li{
+                list-style-type: none;
+                margin: 30px 0px;
+            }
+        </style>
+    </head>
+    <body>
+        <ul id="productslist">
+
+        </ul>
+        <script>
+            var products = [
+                {
+                    name : "ABLOOM ABLM 7 Metal Home Temple  (Height: 7 cm)",
+                    image : "https://rukminim1.flixcart.com/image/416/416/joen7gw0/home-temple/5/f/s/ganesh-cow-4h-abloom-original-imafavkggvt9hjw6.jpeg?q=70",
+                    price : "898"
+                },
+                {
+                    name : "CAPIO ART Engineered Wood Home Temple  (Height: 28 cm)",
+                    image : "https://rukminim1.flixcart.com/image/416/416/kcw9w280/home-temple/q/a/c/dome-temple-capio-art-original-imaftx7kzc2ghnny.jpeg?q=70",
+                    price : "899"
+                },
+                {
+                    name : "CAPIO ART Engineered Wood Home Temple  (Height: 28 cm)",
+                    image : "https://rukminim1.flixcart.com/image/416/416/kcc9q4w0/home-temple/g/m/y/tem06-capio-art-original-imafthhgnvjn3kps.jpeg?q=70",
+                    price : "474"
+                }
+            ]
+            var i=0;
+            var productslist = document.getElementById("productslist");
+            while(i<products.length){
+                productslist.innerHTML=productslist.innerHTML+"<li>"+"<b>Name: </b>"+ products[i].name+"</li>";
+                productslist.innerHTML=productslist.innerHTML+"<li>"+ "<img src="+products[i].image+ ">" +"</li>";
+                productslist.innerHTML=productslist.innerHTML+"<li>"+"<b>Price: </b>"+ products[i].price+"</li>";
+                i++;
+            }
+        </script>
+    </body>
+</html>
