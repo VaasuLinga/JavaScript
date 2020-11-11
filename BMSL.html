@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <style>
+        </style>
+    </head>
+
+    <body>
+        Select your Language: <select id="lan" onchange="lansel()">
+            <option>-- Please select one language --</option>
+            <option value="Eng">English</option>
+            <option value="Tel">Telugu</option>
+            <option value="Hin">Hindi</option>
+        </select><br><br>
+        <span id="Content"></span>
+        <script>
+            function lansel()
+            {
+            //document.getElementById("EngCon").style.display=none;
+            var val=document.getElementById("lan").value;
+                //console.log(val);
+            switch(val){
+                case "Eng": document.getElementById("Content").innerHTML="Welcome to bookmyshow"; break;
+                case "Tel": document.getElementById("Content").innerHTML="బుక్‌మిషోకు స్వాగతం"; break;
+                case "Hin": document.getElementById("Content").innerHTML="बुकमायशो में आपका स्वागत है"; break;
+                default: "None";
+            }
+        }
+        </script>
+
+    </body>
+</html>
