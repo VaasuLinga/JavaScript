@@ -1,0 +1,54 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <form>
+            <input type="radio" onchange="paymentType('creditcard')" name="payment">creditcard
+            <input type="radio" onchange="paymentType('paytm')" name="payment">paytm
+            <input type="radio" onchange="paymentType('cod')" name="payment">cod
+        </form>
+
+        <form id="creditcard">
+            Name on the card:<input type="text" placeholder="enter name"><br><br>
+            Card No:<input type="text" placeholder="enter cc number"><br><br>
+            CVV:<input type="text" placeholder="enter cvv number"><br><br>
+            <button>Submit</button>
+        </form>
+        <form id="paytm">
+           Mobile no:<input type="text" placeholder="enter mobile number"><br><br>
+            <button>Submit</button>
+        </form>
+        <form id="cod">
+            Name:<input type="text" placeholder="enter name"><br><br>
+            Address:<input type="text" placeholder="enter address"><br><br>
+            Pin code:<input type="text" placeholder="enter pincode"><br><br>
+            <button>Submit</button>
+        </form>
+
+        <script>
+            document.getElementById("creditcard").style.display="none";
+            document.getElementById("paytm").style.display="none";
+            document.getElementById("cod").style.display="none";
+            function paymentType(choice){
+                event.preventDefault();
+                //console.log(type);
+                switch(choice){
+                    case "creditcard": document.getElementById("creditcard").style.display="block"; 
+                    document.getElementById("paytm").style.display="none";
+                    document.getElementById("cod").style.display="none";
+                    break;
+                    case "paytm": document.getElementById("paytm").style.display="block";
+                    document.getElementById("creditcard").style.display="none";
+                    document.getElementById("cod").style.display="none";
+                    break;
+                    case "cod": document.getElementById("cod").style.display="block";
+                    document.getElementById("paytm").style.display="none";
+                    document.getElementById("creditcard").style.display="none";
+                    break;
+                    default: "None";
+                }
+            }
+        </script>
+    </body>
+</html>
