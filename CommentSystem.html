@@ -1,0 +1,41 @@
+<html>
+    <head>
+
+    </head>
+
+    <body>
+        <form>
+            Username: <input type="text" id="username"><br><br>
+            Comment: <textarea id="comment"></textarea><br><br>
+            <button onclick="addComment()">Add Comment</button>
+        </form>
+
+        <script>
+            var commentArray= []
+            if(localStorage.getItem("entireCom")==null){
+                localStorage.setItem("entireCom",JSON.stringify(commentArray));
+            }
+            function addComment(){
+                event.preventDefault();
+                var username= document.getElementById("username").value;
+                var comment= document.getElementById("comment").value;
+
+                var userComment={
+                    "username" : username,
+                    "comment" : comment
+                }
+
+                var item=JSON.parse(localStorage.getItem("entireCom"));
+                item.push(userComment);
+                //console.log(item);
+                localStorage.setItem("entireCom",JSON.stringify(item));
+                emptyCom();
+            }
+
+            function emptyCom(){
+                document.getElementById("username").value="";
+                document.getElementById("comment").value="";
+            }
+        </script>
+    </body>
+</html>
