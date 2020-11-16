@@ -1,0 +1,149 @@
+<html>
+    <head>
+        <style>
+            .options{
+                list-style-type: none;
+                padding-left: 0px;
+            }
+            .options li{
+                margin: 10px 0px;
+            }
+            .question{
+                padding-left: 50px;
+            }
+            table{
+                border-collapse: collapse;
+            }
+            th{
+                background-color: gray;
+                color: white;
+            }
+            td{
+                text-align: center;
+            }
+        </style>
+    </head>
+
+    <body>
+        <ol class="question" id="question">
+            <li>
+                <b>HTML is a?</b><br>
+                <ul class="options" id="Q1">
+                    <li><input type="radio" name="1" value="1" id="Q11"><label>Programming Language</label></li>
+                    <li><input type="radio" name="1" value="2" id="Q12"><label>Scripting Language</label></li>
+                    <li><input type="radio" name="1" value="3" id="Q13"><label>Object Oriented Language</label></li>
+                </ul>
+            </li>
+            <li>
+                <b>CSS Stands for?</b><br>
+                <ul class="options" id="Q2">
+                    <li><input type="radio" name="2" value="1" id="Q2"><label>Casecadding Style Sheet</label></li>
+                    <li><input type="radio" name="2" value="2" id="Q2"><label>Common Style Sheet</label></li>
+                    <li><input type="radio" name="2" value="3" id="Q2"><label>Common Standard Sheet</label></li>
+                </ul>
+            </li>
+            <li>
+                <b>What does HTML stand for?</b><br>
+                <ul class="options" id="Q3">
+                    <li><input type="radio" name="3" value="1" id="Q3"><label>Hyperlinks and Text Markup Language</label></li>
+                    <li><input type="radio" name="3" value="2" id="Q3"><label>Home Tool Markup Language</label></li>
+                    <li><input type="radio" name="3" value="3" id="Q3"><label>Hyper Text Markup Language</label></li>
+                </ul>
+            </li>
+            <li>
+                <b>Choose the correct HTML element for the largest heading:</b><br>
+                <ul class="options" id="Q4">
+                    <li><input type="radio" name="4" value="1" id="Q4"><label>h6</label></li>
+                    <li><input type="radio" name="4" value="2" id="Q4"><label>heading</label></li>
+                    <li><input type="radio" name="4" value="3" id="Q4"><label>head</label></li>
+                    <li><input type="radio" name="4" value="4" id="Q4"><label>h1</label></li>
+                </ul>
+            </li>
+            <li>
+                <b>What is the correct HTML element for inserting a line break?</b><br>
+                <ul class="options" id="Q5">
+                    <li><input type="radio" name="5" value="1" id="Q5"><label>br</label></li>
+                    <li><input type="radio" name="5" value="2" id="Q5"><label>lb</label></li>
+                    <li><input type="radio" name="5" value="3" id="Q5"><label>break</label></li>
+                </ul>
+            </li>
+        </ol>
+        <br>
+        <button onclick="submitAns()">Submit</button>
+        <br>
+        <hr>
+        <br>
+        <div id="showData"> 
+            <table border="2">
+                <th>Question Name</th>
+                <th>Actual Answer</th>
+                <th>Given Answer</th>
+                <tr>
+                    <td>Q1</td>
+                    <td>2</td>
+                    <td id="answersQ1"></td>
+                </tr>
+                <tr>
+                    <td>Q2</td>
+                    <td>1</td>
+                    <td id="answersQ2"></td>
+                </tr>
+                <tr>
+                    <td>Q3</td>
+                    <td>3</td>
+                    <td id="answersQ3"></td>
+                </tr>
+                <tr>
+                    <td>Q4</td>
+                    <td>1</td>
+                    <td id="answersQ4"></td>
+                </tr>
+                <tr>
+                    <td>Q5</td>
+                    <td>1</td>
+                    <td id="answersQ5"></td>
+                </tr>
+            </table>
+        </div>
+        <script>
+            function submitAns(){
+                //console.log(document.getElementById("question").getElementsByTagName("li").length);
+                var Q1 = document.getElementsByName("1");
+                for(var i=0;i<Q1.length;i++){
+                    if(Q1[i].checked){
+                     var Q1Ans= Q1[i].value;
+                    }
+                }
+                document.getElementById("answersQ1").innerHTML = Q1Ans;
+                var Q2 = document.getElementsByName("2");
+                for(var i=0;i<Q2.length;i++){
+                    if(Q2[i].checked){
+                     var Q2Ans= Q2[i].value;
+                    }
+                }
+                document.getElementById("answersQ2").innerHTML = Q2Ans;
+                var Q3 = document.getElementsByName("3");
+                for(var i=0;i<Q3.length;i++){
+                    if(Q3[i].checked){
+                     var Q3Ans= Q3[i].value;
+                    }
+                }
+                document.getElementById("answersQ3").innerHTML = Q3Ans;
+                var Q4 = document.getElementsByName("4");
+                for(var i=0;i<Q4.length;i++){
+                    if(Q4[i].checked){
+                     var Q4Ans= Q4[i].value;
+                    }
+                }
+                document.getElementById("answersQ4").innerHTML = Q4Ans;
+                var Q5 = document.getElementsByName("5");
+                for(var i=0;i<Q5.length;i++){
+                    if(Q5[i].checked){
+                     var Q5Ans= Q5[i].value;
+                    }
+                }
+                document.getElementById("answersQ5").innerHTML = Q5Ans;
+            }
+        </script>
+    </body>
+</html>
