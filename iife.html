@@ -1,0 +1,20 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <script>
+            (function(){
+                var h1= document.createElement("h1");
+                h1.id="loader";
+                h1.innerHTML="Loading the app";
+                document.body.append(h1);
+                setTimeout(function() {
+                    console.log("Loading the files");
+                    document.getElementById("loader").innerHTML="";
+                }, 2000);
+
+            })();
+        </script>
+    </body>
+</html>
