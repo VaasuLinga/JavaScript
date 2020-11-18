@@ -1,0 +1,69 @@
+<html>
+    <head>
+        <style>
+            span{
+                color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <form>
+            Username: <input type="text" id="username"> <span id="user_msg"></span><br><br>
+            Password: <input type="password" id="password"> <span id="pass_msg"></span><br><br>
+            Email: <input type="text" id="email"> <span id="email_msg"></span><br><br>
+            Mobile Number: <input type="number" id="mobile"> <span id="mob_msg"></span><br><br>
+            <button onclick="validate()">Submit</button>
+        </form>
+        
+        <script>
+            var usernames= ["vaasu","linga","srinu","rao"];
+            var emails= ["vaasu@gmail.com","linga@gmail.com","rao@gmail.com"];
+            var mobilenos= ["7799548005","8096522913","9341324864"];
+            function validate(){
+                event.preventDefault();
+                var username= getValues("username");
+                var password= getValues("password");
+                var email= getValues("email");
+                var mobile= getValues("mobile");
+
+                var usernamecheck= checkValues(username,usernames);
+                if(usernamecheck)
+                {
+                    msgShow("user_msg","This username is already taken");
+                }
+                else
+                {
+                    msgShow("user_msg","This username is available");
+                }
+                var emailcheck= checkValues(email,emails);
+                if(emailcheck)
+                {
+                    msgShow("email_msg","This email is already taken");
+                }
+                else
+                {
+                    msgShow("email_msg","This email is accepted");
+                }
+                var mobcheck= checkValues(mobile,mobilenos);
+                if(mobcheck)
+                {
+                    msgShow("mob_msg","This mobile number is already used");
+                }
+                else
+                {
+                    msgShow("mob_msg","This mobile number is accepted");
+                }
+
+                function getValues(id){
+                    return document.getElementById(id).value;
+                }
+                function checkValues(key,arrayName){
+                    return arrayName.includes(key);
+                }
+                function msgShow(id,msg){
+                    return document.getElementById(id).innerHTML=msg;
+                }
+            }
+        </script>
+    </body>
+</html>
