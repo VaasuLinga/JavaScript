@@ -1,0 +1,69 @@
+<html>
+    <head>
+        <style>
+            span{
+                color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <form>
+            pid: <input type="text" id="pid"> <span id="pid_msg"></span><br><br>
+            pname: <input type="text" id="pname"> <span id="pname_msg"></span><br><br>
+            price: <input type="text" id="price"> <span id="price_msg"></span><br><br>
+            category: <input type="text" id="category"> <span id="category_msg"></span><br><br>
+            seller: <input type="text" id="seller"> <span id="seller_msg"></span><br><br>
+            <button onclick="validate()">Submit</button>
+        </form>
+        
+        <script>
+            var pids= [1,2,3,4,5,6,7];
+            var pnames= ["p1","p2","p3"];
+            function validate(){
+                event.preventDefault();
+                var pid= parseInt(getValues("pid"));
+                var pname= getValues("pname");
+                var price= getValues("price");
+                var category= getValues("category");
+                var seller= getValues("seller");
+                var pidcheck= checkValues(pid,pids);
+                console.log(pid);
+                if(pidcheck)
+                {
+                    msgShow("pid_msg","This product id is already taken");
+                }
+                else
+                {
+                    msgShow("pid_msg","This product id is available");
+                }
+                var pnamecheck= checkValues(pname,pnames);
+                if(pnamecheck)
+                {
+                    msgShow("pname_msg","This product name is already taken");
+                }
+                else
+                {
+                    msgShow("pname_msg","This product name is accepted");
+                }
+                if(price <=0 || (typeof price=="string"))
+                {
+                    document.getElementById("price_msg").innerHTML="Please enter a valid price";
+                }
+                else
+                {
+                    document.getElementById("price_msg").innerHTML="Price is accepted";
+                }
+
+                function getValues(id){
+                    return document.getElementById(id).value;
+                }
+                function checkValues(key,arrayName){
+                    return arrayName.includes(key);
+                }
+                function msgShow(id,msg){
+                    return document.getElementById(id).innerHTML=msg;
+                }
+            }
+        </script>
+    </body>
+</html>
