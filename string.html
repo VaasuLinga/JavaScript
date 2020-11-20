@@ -1,0 +1,15 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        Enter email: <input onkeyup="convert()" type="text" id="emailId">
+
+        <script>
+            function convert(){
+                var emailId= document.getElementById("emailId").value;
+                document.getElementById("emailId").value=emailId.toUpperCase();
+            }
+        </script>
+    </body>
+</html>
