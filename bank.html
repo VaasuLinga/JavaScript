@@ -1,0 +1,20 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        Enter Account Number: <input type="text" onchange="removeText()" id="accNum" onpaste="return paste()"> <span id="accNum_msg"></span>
+    </body>
+
+    <script>
+        function removeText(){
+            document.getElementById("accNum_msg").innerHTML="";
+        }
+        function paste(){
+            //var accNum= document.getElementById("accNum").value;
+            if(accNum!=""){}
+            document.getElementById("accNum_msg").innerHTML="Cannot paste the account number";
+            return false;
+        }
+    </script>
+</html>
