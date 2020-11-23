@@ -1,0 +1,69 @@
+<html>
+    <head>
+
+    </head>
+    <body id="body">
+        <script>
+            var form=document.createElement("form");
+            form.id="form";
+            var PCNlab=document.createElement("label");
+            PCNlab.innerHTML="Primary Contact Number";
+            var br=document.createElement("br");
+            var br1=document.createElement("br");
+            var br2=document.createElement("br");
+            var br3=document.createElement("br");
+            var br4=document.createElement("br");
+            var br5=document.createElement("br");
+            var br6=document.createElement("br");
+            var br7=document.createElement("br");
+            var br8=document.createElement("br");
+            var br9=document.createElement("br");
+            var br10=document.createElement("br");
+            //var PCNbr=document.createElement("break")
+            //console.log(PCNlab);
+            //form.appendChild(PCNlab);
+            var PCN=document.createElement("input");
+            PCN.type="number";
+            PCN.size="20";
+            form.appendChild(PCNlab);
+            form.appendChild(br);
+            form.appendChild(br5);
+            form.appendChild(PCN);
+            form.appendChild(br1);
+            form.appendChild(br6);
+
+            var preCon=document.createElement("label");
+            preCon.innerHTML="Previously Empolyed by the Cognizent";
+            var prevCon=document.createElement("select");
+            var prevCon1=document.createElement("option");
+            prevCon1.innerHTML="--Please select--";
+            var prevCon2=document.createElement("option");
+            prevCon2.innerHTML="Yes";
+            var prevCon3=document.createElement("option");
+            prevCon3.innerHTML="No";
+            prevCon.appendChild(prevCon1);
+            prevCon.appendChild(prevCon2);
+            prevCon.appendChild(prevCon3);
+            form.appendChild(preCon);
+            form.appendChild(br2);
+            form.appendChild(br7);
+            form.appendChild(prevCon);
+            form.appendChild(br3);
+            form.appendChild(br8);
+
+            var skillsLab=document.createElement("label");
+            skillsLab.innerHTML="Skills";
+            var skills= document.createElement("textarea");
+            form.appendChild(skillsLab); 
+            form.appendChild(br4);
+            form.appendChild(br9);
+            form.appendChild(skills);
+            //form.appendChild(br);   
+
+            var body=document.getElementById("body");
+            body.appendChild(form);
+            console.log(body);
+
+        </script>
+    </body>
+</html>
