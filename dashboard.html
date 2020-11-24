@@ -1,0 +1,37 @@
+<html>
+    <head>
+
+    </head>
+
+    <body>
+        <h1 id="fullname"></h1>
+        <h1 id="aadharCardNumber"></h1>
+        <h1 id="accountBalnce"></h1>
+        <h1 id="accountNumber"></h1>
+        <h1 id="address"></h1>
+        <h1 id="mobileNumber"></h1>
+
+        <button>Fund Transfer</button>
+        <button onclick="enableDeposit()">Deposit</button>
+
+        <form id="depositForm">
+            Enter Amount: <input type="number" id="amount">
+            <button onclick="deposit()">Submit</button>
+        </form>
+     
+        <script src="test5.js"></script>
+        <script>
+            document.getElementById("depositForm").hidden=true;
+
+            var currentUser=getCurrentUser();
+            if(currentUser!=null){
+                document.getElementById("fullname").innerHTML="Full Name:&nbsp;"+currentUser.fullname;
+                document.getElementById("aadharCardNumber").innerHTML="Aadhar Number:&nbsp;"+currentUser.aadharCardNumber;
+                document.getElementById("accountBalnce").innerHTML="Account Balance:&nbsp;"+currentUser.accountBalnce;
+                document.getElementById("accountNumber").innerHTML="Account Number:&nbsp;"+currentUser.accountNumber;
+                document.getElementById("address").innerHTML="Address:&nbsp;"+currentUser.address;
+                document.getElementById("mobileNumber").innerHTML="Mobile Number:&nbsp;"+currentUser.mobileNumber;
+            }
+        </script>
+    </body>
+</html>
